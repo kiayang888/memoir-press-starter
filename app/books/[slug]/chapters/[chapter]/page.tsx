@@ -19,8 +19,9 @@ export default async function ChapterPage({ params }: Props) {
   if (!chapter) return notFound();
 
   const chapters = listChapterNumbers(params.slug);
+  // idx is the position inside `chapters`
   const idx = chapters.indexOf(n);
-  const prev = idx > 0 ? chapters[idx - 1] : null;
+  const prev = idx > 0 ? chapters[idx - 1] : 0; // when idx===0, prev -> 0
   const next = idx < chapters.length - 1 ? chapters[idx + 1] : null;
 
   return (

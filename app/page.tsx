@@ -9,14 +9,14 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 const BOOKS = [
-  { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop", blurb: "Through floods, fields, and family promises, a life stitched together with quiet devotion.", tag: "Featured" },
+  { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "Through floods, fields, and family promises, a life stitched together with quiet devotion.", tag: "Featured" },
   { slug: "letters-to-the-present", title: "Letters to the Present", subtitle: "Notes on Memory & Grace", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "New" },
   { slug: "story-2", title: "story02", subtitle: "story02", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "KiaStory" },
   { slug: "one-road-one-spirit", title: "One Road, One Spirit", subtitle: "Two Paths Becoming One", cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop", blurb: "A love story about choosing each other again and again across decades and oceans.", tag: "Bestseller" },
 ];
 
 const POSTS = [
-  { title: "The Father I Remember", date: "September 20, 2025", excerpt: "He walked quickly, spoke softly, and built quietly. In 1972 the river swelled—and so did our courage...", image: "https://images.unsplash.com/photo-1519681390377-3f6f06bb5042?q=80&w=1600&auto=format&fit=crop" },
+  { title: "The Father I Remember", date: "September 20, 2025", excerpt: "He walked quickly, spoke softly, and built quietly. In 1972 the river swelled—and so did our courage...", image: "/images/frontImage.png" },
   { title: "Sunset on the Porch", date: "August 14, 2025", excerpt: "Cornfields breathe, the day exhales. I tuck another small, perfect moment into my pocket...", image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" },
   { title: "Devil's Lake, Twenty Years", date: "July 2, 2025", excerpt: "Every trail is a chapter; every photo, a page I keep returning to...", image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop" },
 ];
@@ -102,9 +102,17 @@ function Hero() {
             Build your legacy in words—and invite others into the story.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Button className="rounded-2xl px-5"><BookOpen className="mr-2 h-4 w-4"/> Read Free Chapters</Button>
-            <Button className="rounded-2xl px-5" variant="secondary"><NotebookPen className="mr-2 h-4 w-4"/> Browse Library</Button>
-            <Button className="rounded-2xl px-5" variant="outline"><Mail className="mr-2 h-4 w-4"/> Subscribe</Button>
+            <Button className="rounded-2xl px-5"><BookOpen className="mr-2 h-4 w-4"/> Read Free Chapters
+            </Button><Link href="/books" passHref legacyBehavior>
+            <Button asChild variant="secondary" className="rounded-2xl px-5">
+              <a className="inline-flex items-center">
+                <NotebookPen className="mr-2 h-4 w-4" />
+                Browse Library
+              </a>
+            </Button></Link>
+            <Button className="rounded-2xl px-5" variant="outline">
+              <Mail className="mr-2 h-4 w-4"/> Subscribe
+            </Button>
           </div>
           <div className="flex items-center gap-2 text-sm text-neutral-600">
             <Star className="h-4 w-4" /> Trusted by readers who love heartfelt, lived-in stories.
