@@ -9,14 +9,14 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
 const BOOKS = [
-  { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "Through floods, fields, and family promises, a life stitched together with quiet devotion.", tag: "Featured" },
+  { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "The Father I Remember is a memoir of loss and survival, of hunger and hope. It is a story of siblings bound together by rice, meat, and love—raised by the strong hands of a grandmother and aunts when the world had turned away.", tag: "Featured" },
   { slug: "letters-to-the-present", title: "Letters to the Present", subtitle: "Notes on Memory & Grace", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "New" },
   { slug: "story-2", title: "story02", subtitle: "story02", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "KiaStory" },
   { slug: "one-road-one-spirit", title: "One Road, One Spirit", subtitle: "Two Paths Becoming One", cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop", blurb: "A love story about choosing each other again and again across decades and oceans.", tag: "Bestseller" },
 ];
 
 const POSTS = [
-  { title: "The Father I Remember", date: "September 20, 2025", excerpt: "He walked quickly, spoke softly, and built quietly. In 1972 the river swelled—and so did our courage...", image: "/images/frontImage.png" },
+  { title: "The Father I Remember", date: "September 20, 2025", excerpt: "When his father’s life was cut short in the opium fields of Laos, a young boy was left with nothing but his footsteps and his final words...", image: "/images/frontImage2.png" },
   { title: "Sunset on the Porch", date: "August 14, 2025", excerpt: "Cornfields breathe, the day exhales. I tuck another small, perfect moment into my pocket...", image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" },
   { title: "Devil's Lake, Twenty Years", date: "July 2, 2025", excerpt: "Every trail is a chapter; every photo, a page I keep returning to...", image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop" },
 ];
