@@ -14,3 +14,52 @@
 /* prose for chapter content */
 .prose p { margin: 0.75rem 0; }
 .prose h2, .prose h3 { margin-top: 1.5rem; }
+
+
+
+/* Optional: memoir-style blockquotes */
+.prose blockquote {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  text-align: center;
+  color: #525252;       /* neutral-700 */
+  border-left: 0;
+  margin: 2rem 0;
+  padding-left: 0;
+}
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none;
+}
+.prose blockquote::before,
+.prose blockquote::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #e5e5e5; /* neutral-200 */
+  opacity: .8;
+  margin: 1rem 0;
+}
+
+/* Optional: pull-quote style (for key emotional lines) */
+.prose blockquote.pull {
+  font-family: var(--font-serif), serif;
+  font-size: 1.5rem;          /* Larger text */
+  line-height: 2.25rem;
+  font-style: italic;
+  text-align: center;
+  color: #3f3f3f;             /* slightly darker for emphasis */
+  border-left: 0;
+  margin: 3rem 0;
+  padding-left: 0;
+}
+
+.prose blockquote.pull::before,
+.prose blockquote.pull::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #d4d4d4;  /* slightly darker divider */
+  opacity: .9;
+  margin: 1.25rem 0;
+}

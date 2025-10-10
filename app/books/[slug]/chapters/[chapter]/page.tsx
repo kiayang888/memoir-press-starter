@@ -44,8 +44,13 @@ export default async function ChapterPage({ params }: Props) {
         </div>
       )}
 
-      <article className="prose prose-neutral max-w-none" dangerouslySetInnerHTML={{ __html: chapter.html }} />
-
+      <article
+  className="
+    prose prose-neutral prose-memoir max-w-none
+    pt-4 pb-8
+  "
+  dangerouslySetInnerHTML={{ __html: chapter.html }}
+/>
       {chapter.images && chapter.images.length > 0 && (
         <section className="mt-8">
           <h2 className="font-serif text-2xl mb-2">Photos</h2>
