@@ -11,9 +11,9 @@ import Link from "next/link";
 const BOOKS = [
   { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "The Father I Remember is a memoir of loss and survival, of hunger and hope. It is a story of siblings bound together by rice, meat, and love—raised by the strong hands of a grandmother and aunts when the world had turned away.", tag: "Featured" },
   { slug: "dont-separate-us", title: "Don't Separate Us", subtitle: "Take care of my children. Do not separate them", cover: "/images/frontImage4.png", blurb: "For days my father suffered. Finally, weak and knowing the end was near, he spoke his last words to my grandmother and aunt:'Take care of my children. Do not separate them.'", tag: "New" },
-  { slug: "letters-to-the-present", title: "Letters to the Present", subtitle: "Notes on Memory & Grace", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "New" },
-  { slug: "story-2", title: "As Long As We Can Dream", subtitle: "As Long As We Can Dream", cover: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "KiaStory" },
-  { slug: "one-road-one-spirit", title: "One Road, One Spirit", subtitle: "Two Paths Becoming One", cover: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop", blurb: "A love story about choosing each other again and again across decades and oceans.", tag: "Bestseller" },
+  { slug: "letters-to-the-present", title: "Letters to the Present", subtitle: "Notes on Memory & Grace", cover: "/images/poppyhill7.jpg", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "New" },
+  { slug: "story-2", title: "Don't Separate Them", subtitle: "A Short Memoir", cover: "/images/cover7.jpg", blurb: "This is the story of the father I remember—and the love that carried us through orphanhood.", tag: "New" },
+  { slug: "one-road-one-spirit", title: "One Road, One Spirit", subtitle: "Two Paths Becoming One", cover: "/images/frontImage7.png", blurb: "A love story about choosing each other again and again across decades and oceans.", tag: "Bestseller" },
 ];
 
 const POSTS = [
