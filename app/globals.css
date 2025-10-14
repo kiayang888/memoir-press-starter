@@ -15,7 +15,15 @@
 .prose p { margin: 0.75rem 0; }
 .prose h2, .prose h3 { margin-top: 1.5rem; }
 
-
+/* Resize images inside prose content */
+.prose img {
+  width: auto; height: auto;
+  max-width: 1000px;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+  border-radius: 0.5rem;
+}
 
 /* Optional: memoir-style blockquotes */
 .prose blockquote {
