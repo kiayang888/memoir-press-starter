@@ -19,7 +19,7 @@ const BOOKS = [
 const POSTS = [
   { title: "The Father I Remember", date: "September 20, 2025", excerpt: "When his father’s life was cut short in the opium fields of Laos, a young boy was left with nothing but his footsteps and his final words...", image: "/images/frontImage.png" },
   { title: "Sunset on the Porch", date: "August 14, 2025", excerpt: "Cornfields breathe, the day exhales. I tuck another small, perfect moment into my pocket...", image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" },
-  { title: "Devil's Lake, Twenty Years", date: "July 2, 2025", excerpt: "Every trail is a chapter; every photo, a page I keep returning to...", image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1600&auto=format&fit=crop" },
+  { title: "Devil's Lake, Twenty Years", date: "July 2, 2025", excerpt: "Every trail is a chapter; every photo, a page I keep returning to...", image: "/images/nature1.jpg" },
 ];
 
 export default function Page() {
