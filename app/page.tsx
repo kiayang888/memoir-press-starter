@@ -7,19 +7,48 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+// Convention: first chapter is #0. Adjust numbers per book if needed.
+const FIRST_CHAPTER: Record<string, number> = {
+  "river-years": 0,
+  "dont-separate-us": 0,
+  "letters-to-the-present": 0,
+  "story-2": 0,
+  "one-road-one-spirit": 0,
+};
+
+function getStartPath(slug: string) {
+  const n = FIRST_CHAPTER[slug] ?? 0;
+  return `/books/${slug}/chapters/${n}`;
+}
 
 const BOOKS = [
-  { slug: "river-years", title: "The Father I Remember", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "The Father I Remember is a memoir of loss and survival, of hunger and hope. It is a story of siblings bound together by rice, meat, and love—raised by the strong hands of a grandmother and aunts when the world had turned away.", tag: "Featured" },
-  { slug: "dont-separate-us", title: "Don't Separate Us", subtitle: "Take care of my children. Do not separate them", cover: "/images/frontImage4.png", blurb: "For days my father suffered. Finally, weak and knowing the end was near, he spoke his last words to my grandmother and aunt:'Take care of my children. Do not separate them.'", tag: "New" },
+  { slug: "river-years", title: "Don't Separate Us", subtitle: "A Memoir of Resilience", cover: "/images/frontImage.png", blurb: "The Father I Remember is a memoir of loss and survival, of hunger and hope. It is a story of siblings bound together by rice, meat, and love—raised by the strong hands of a grandmother and aunts when the world had turned away.", tag: "Featured" },
+  { slug: "dont-separate-us", title: "The Father I Remember", subtitle: "Take care of my children. Do not separate them", cover: "/images/frontImage4.png", blurb: "For days my father suffered. Finally, weak and knowing the end was near, he spoke his last words to my grandmother and aunt:'Take care of my children. Do not separate them.'", tag: "New" },
   { slug: "letters-to-the-present", title: "Letters to the Present", subtitle: "Notes on Memory & Grace", cover: "/images/poppyhill7.jpg", blurb: "Short reflections that celebrate the magic in everyday moments—coffee, sunsets, first laughter.", tag: "New" },
   { slug: "story-2", title: "Don't Separate Them", subtitle: "A Short Memoir", cover: "/images/cover7.jpg", blurb: "This is the story of the father I remember—and the love that carried us through orphanhood.", tag: "New" },
   { slug: "one-road-one-spirit", title: "One Road, One Spirit", subtitle: "Two Paths Becoming One", cover: "/images/frontImage7.png", blurb: "A love story about choosing each other again and again across decades and oceans.", tag: "Bestseller" },
 ];
 
+// Convention: first post is #0. Adjust numbers per book if needed.
 const POSTS = [
-  { title: "The Father I Remember", date: "September 20, 2025", excerpt: "When his father’s life was cut short in the opium fields of Laos, a young boy was left with nothing but his footsteps and his final words...", image: "/images/frontImage.png" },
-  { title: "Sunset on the Porch", date: "August 14, 2025", excerpt: "Cornfields breathe, the day exhales. I tuck another small, perfect moment into my pocket...", image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" },
-  { title: "Devil's Lake, Twenty Years", date: "July 2, 2025", excerpt: "Every trail is a chapter; every photo, a page I keep returning to...", image: "/images/nature1.jpg" },
+  {
+    slug: "river-years",
+    title: "Dont Separate Us",
+    date: "September 20, 2025",
+    excerpt: "When his father’s life was cut short in the opium fields of Laos, a young boy was left with nothing but his footsteps and his final words...",
+    image: "/images/4kidscrying2.jpg",
+  },
+  { slug: "sunset-on-the-porch",
+    title: "Sunset on the Porch",
+    date: "August 14, 2025",
+    excerpt: "Cornfields breathe, the day exhales. I tuck another small, perfect moment into my pocket...",
+    image: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" 
+  },
+  { slug: "devils-lake-twenty-years",
+    title: "Devil's Lake, Twenty Years",
+    date: "July 2, 2025",
+    excerpt: "Every trail is a chapter; every photo, a page I keep returning to...",
+    image: "/images/nature1.jpg" },
 ];
 
 export default function Page() {
@@ -89,12 +118,21 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <img src="https://images.unsplash.com/photo-1518961292281-2b2a4acb0963?q=80&w=2400&auto=format&fit=crop" alt="Warm library background" className="h-full w-full object-cover opacity-20" />
+        <img
+          src="https://images.unsplash.com/photo-1518961292281-2b2a4acb0963?q=80&w=2400&auto=format&fit=crop"
+          alt="Warm library background"
+          className="h-full w-full object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/70 to-white" />
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 py-20 md:grid-cols-2">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6"
+        >
           <h1 className="font-serif text-4xl leading-tight md:text-5xl">
             A home for <span className="underline decoration-amber-400 decoration-4 underline-offset-8">memoirs</span>, stories, and the little moments that make a life.
           </h1>
@@ -102,30 +140,49 @@ function Hero() {
             Read free chapters, browse the library, and get new reflections delivered to your inbox.
             Build your legacy in words—and invite others into the story.
           </p>
+
           <div className="flex flex-wrap gap-3 pt-2">
-            <Button className="rounded-2xl px-5"><BookOpen className="mr-2 h-4 w-4"/> Read Free Chapters
-            </Button><Link href="/books" passHref legacyBehavior>
+            {/* Primary CTA: Read Story → first chapter of the first featured book */}
+            <Button asChild className="rounded-2xl px-5">
+              <Link href={getStartPath(BOOKS[0].slug)}>
+                <BookOpen className="mr-2 h-4 w-4" />
+                Read Story
+              </Link>
+            </Button>
+
+            {/* Browse Library (unchanged, but simplified to use asChild too) */}
             <Button asChild variant="secondary" className="rounded-2xl px-5">
-              <a className="inline-flex items-center">
+              <Link href="/books" className="inline-flex items-center">
                 <NotebookPen className="mr-2 h-4 w-4" />
                 Browse Library
-              </a>
-            </Button></Link>
-            <Button className="rounded-2xl px-5" variant="outline">
-              <Mail className="mr-2 h-4 w-4"/> Subscribe
+              </Link>
+            </Button>
+
+            {/* Subscribe (opens newsletter section) */}
+            <Button asChild className="rounded-2xl px-5" variant="outline">
+              <Link href="#subscribe" className="inline-flex items-center">
+                <Mail className="mr-2 h-4 w-4" />
+                Subscribe
+              </Link>
             </Button>
           </div>
+
           <div className="flex items-center gap-2 text-sm text-neutral-600">
             <Star className="h-4 w-4" /> Trusted by readers who love heartfelt, lived-in stories.
           </div>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative"
+        >
           <div className="rounded-3xl border bg-white/80 p-4 shadow-xl backdrop-blur">
             <div className="grid grid-cols-3 gap-3">
               {BOOKS.map((b, i) => (
                 <div key={i} className="overflow-hidden rounded-2xl border">
-                  <img src={b.cover} alt={b.title} className="h-40 w-full object-cover"/>
+                  <img src={b.cover} alt={b.title} className="h-40 w-full object-cover" />
                 </div>
               ))}
             </div>
@@ -135,6 +192,7 @@ function Hero() {
     </section>
   );
 }
+
 
 function FeaturedBooks({ onBuy }: { onBuy: (slug: string) => void }) {
   return (
@@ -158,12 +216,16 @@ function FeaturedBooks({ onBuy }: { onBuy: (slug: string) => void }) {
                 <p className="text-sm text-neutral-600">{b.subtitle}</p>
                 <p className="pt-2 text-sm">{b.blurb}</p>
               </CardContent>
-              <CardFooter className="flex items-center justify-between p-5">
-                <Link href={`/books/${b.slug}`}><Button className="rounded-2xl px-4">Read Sample</Button></Link>
-                <Button onClick={() => onBuy(b.slug)} className="rounded-2xl px-4" variant="secondary">
-                  Buy <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardFooter>
+<CardFooter className="flex items-center justify-between p-5">
+  <Button asChild className="rounded-2xl px-4">
+    <Link href={getStartPath(b.slug)}>Read Story</Link>
+  </Button>
+
+  <Button onClick={() => onBuy(b.slug)} className="rounded-2xl px-4" variant="secondary">
+    Buy <ArrowRight className="ml-2 h-4 w-4" />
+  </Button>
+</CardFooter>
+
             </Card>
           </motion.div>
         ))}
@@ -188,9 +250,14 @@ function Journal() {
               <p className="text-xs uppercase tracking-wide text-amber-700">{p.date}</p>
               <h3 className="font-serif text-xl">{p.title}</h3>
               <p className="text-sm text-neutral-700">{p.excerpt}</p>
-              <a className="inline-flex items-center text-sm underline underline-offset-4 hover:opacity-80" href="#">
-                Read story <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
+{p.slug ? (
+  <Button asChild variant="link" className="h-auto p-0 text-sm underline underline-offset-4">
+    <Link href={getStartPath(p.slug)}>
+      Read story <ArrowRight className="ml-1 h-4 w-4" />
+    </Link>
+  </Button>
+) : null}
+
             </div>
           </motion.article>
         ))}
