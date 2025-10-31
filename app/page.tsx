@@ -286,11 +286,11 @@ function MemoriesStrip() {
         <div className="grid grid-cols-3 gap-3">
           {[
             "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1447069387593-a5de0862481e?q=80&w=1600&auto=format&fit=crop",
+            "/images/bavini2.png",
+            "/images/CK2.jpg",
             "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=1600&auto=format&fit=crop",
+            "/images/ck5.jpg",
+            "/images/walk2.jpg",
           ].map((src, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.03 }} className="overflow-hidden rounded-2xl border">
               <img src={src} alt="memory" className="h-28 w-full object-cover" />
