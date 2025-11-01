@@ -289,7 +289,7 @@ function MemoriesStrip() {
             "/images/bavini2.png",
             "/images/CK2.jpg",
             "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=1600&auto=format&fit=crop",
-            "/images/ck5.jpg",
+            "/images/CK5.jpg",
             "/images/walk2.jpg",
           ].map((src, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.03 }} className="overflow-hidden rounded-2xl border">
