@@ -80,3 +80,39 @@ The default **filesystem CMS** needs no keys. If you want a hosted CMS:
 - Add `contentlayer.config.ts` and wrap `next.config.js` with `withContentlayer()`.
 - Convert `/content` to MDX and import from `contentlayer/generated`.
 
+## --Work on feature branches
+git checkout -b feature/chapter-nav
+# ...edit files...
+git add -A
+git commit -m "Add chapter navigation"
+git push -u origin feature/chapter-nav   # first push sets upstream
+
+🔄 3. If the repo was never initialized
+
+If you cloned it from GitHub, make sure you’re in the cloned folder.
+If you started fresh, initialize Git:
+
+git init
+git add .
+git commit -m "Initial commit"
+
+
+Then link it to your GitHub repo (replace with your repo URL):
+
+git remote add origin https://github.com/yourusername/memoir-press-starter.git
+
+🚀 4. If you just want to push new changes
+
+Once inside the Git repo folder:
+
+git add .
+git commit -m "Update website"
+git push
+
+
+If this is your first push:
+
+git push -u origin main
+
+
+(or replace main with your branch name if different)
